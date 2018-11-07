@@ -18,13 +18,16 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.google.protobuf'
 
+def protobufVersion = '3.6.1'
+def grpcVersion = '1.16.1'
+
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:3.6.1"
+        artifact = "com.google.protobuf:protoc:${protobufVersion}"
     }
     plugins {
         grpc {
-            artifact = 'io.grpc:protoc-gen-grpc-java:1.16.1'
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}"
         }
     }
     generateProtoTasks {
@@ -52,10 +55,10 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('io.grpc:grpc-stub:1.16.1')
-    implementation('io.grpc:grpc-core:1.16.1')
-    implementation('io.grpc:grpc-protobuf:1.16.1')
-    implementation('io.grpc:grpc-netty:1.16.1')
+    implementation("io.grpc:grpc-stub:${grpcVersion}")
+    implementation("io.grpc:grpc-core:${grpcVersion}")
+    implementation("io.grpc:grpc-protobuf:${grpcVersion}")
+    implementation("io.grpc:grpc-netty:${grpcVersion}")
 
     compileOnly('org.projectlombok:lombok')
 

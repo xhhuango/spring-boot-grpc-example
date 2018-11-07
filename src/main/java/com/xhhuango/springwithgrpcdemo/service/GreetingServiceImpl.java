@@ -2,8 +2,10 @@ package com.xhhuango.springwithgrpcdemo.service;
 
 import com.xhhuango.springwithgrpcdemo.GreetingServiceGrpc;
 import com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass;
+import com.xhhuango.springwithgrpcdemo.starter.GrpcService;
 import io.grpc.stub.StreamObserver;
 
+@GrpcService
 public class GreetingServiceImpl extends GreetingServiceGrpc.GreetingServiceImplBase {
     @Override
     public void greeting(GreetingServiceOuterClass.HelloRequest request,
