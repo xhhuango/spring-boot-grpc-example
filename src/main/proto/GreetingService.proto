@@ -3,7 +3,6 @@ package com.xhhuango.springwithgrpcdemo;
 
 message HelloRequest {
     string name = 1;
-    repeated string hobbies = 2;
 }
 
 message HelloResponse {
@@ -11,6 +10,8 @@ message HelloResponse {
 }
 
 service GreetingService {
-    rpc greeting(HelloRequest) returns (HelloResponse);
-    rpc greetingWithStream(HelloRequest) returns (stream HelloResponse);
+    rpc greeting (HelloRequest) returns (HelloResponse);
+    rpc greetingWithResponseStream (HelloRequest) returns (stream HelloResponse);
+    rpc greetingWithRequestStream (stream HelloRequest) returns (HelloResponse);
+    rpc greetingWithRequestResponseStream (stream HelloRequest) returns (stream HelloResponse);
 }

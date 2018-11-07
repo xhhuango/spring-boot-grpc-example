@@ -60,35 +60,99 @@ public final class GreetingServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
-      com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithStreamMethod;
+      com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithResponseStreamMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "greetingWithStream",
+      fullMethodName = SERVICE_NAME + '/' + "greetingWithResponseStream",
       requestType = com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest.class,
       responseType = com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
-      com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithStreamMethod() {
-    io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest, com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithStreamMethod;
-    if ((getGreetingWithStreamMethod = GreetingServiceGrpc.getGreetingWithStreamMethod) == null) {
+      com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithResponseStreamMethod() {
+    io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest, com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithResponseStreamMethod;
+    if ((getGreetingWithResponseStreamMethod = GreetingServiceGrpc.getGreetingWithResponseStreamMethod) == null) {
       synchronized (GreetingServiceGrpc.class) {
-        if ((getGreetingWithStreamMethod = GreetingServiceGrpc.getGreetingWithStreamMethod) == null) {
-          GreetingServiceGrpc.getGreetingWithStreamMethod = getGreetingWithStreamMethod = 
+        if ((getGreetingWithResponseStreamMethod = GreetingServiceGrpc.getGreetingWithResponseStreamMethod) == null) {
+          GreetingServiceGrpc.getGreetingWithResponseStreamMethod = getGreetingWithResponseStreamMethod = 
               io.grpc.MethodDescriptor.<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest, com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "com.xhhuango.springwithgrpcdemo.GreetingService", "greetingWithStream"))
+                  "com.xhhuango.springwithgrpcdemo.GreetingService", "greetingWithResponseStream"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("greetingWithStream"))
+                  .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("greetingWithResponseStream"))
                   .build();
           }
         }
      }
-     return getGreetingWithStreamMethod;
+     return getGreetingWithResponseStreamMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
+      com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithRequestStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "greetingWithRequestStream",
+      requestType = com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest.class,
+      responseType = com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
+      com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithRequestStreamMethod() {
+    io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest, com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithRequestStreamMethod;
+    if ((getGreetingWithRequestStreamMethod = GreetingServiceGrpc.getGreetingWithRequestStreamMethod) == null) {
+      synchronized (GreetingServiceGrpc.class) {
+        if ((getGreetingWithRequestStreamMethod = GreetingServiceGrpc.getGreetingWithRequestStreamMethod) == null) {
+          GreetingServiceGrpc.getGreetingWithRequestStreamMethod = getGreetingWithRequestStreamMethod = 
+              io.grpc.MethodDescriptor.<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest, com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.xhhuango.springwithgrpcdemo.GreetingService", "greetingWithRequestStream"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("greetingWithRequestStream"))
+                  .build();
+          }
+        }
+     }
+     return getGreetingWithRequestStreamMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
+      com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithRequestResponseStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "greetingWithRequestResponseStream",
+      requestType = com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest.class,
+      responseType = com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
+      com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithRequestResponseStreamMethod() {
+    io.grpc.MethodDescriptor<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest, com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> getGreetingWithRequestResponseStreamMethod;
+    if ((getGreetingWithRequestResponseStreamMethod = GreetingServiceGrpc.getGreetingWithRequestResponseStreamMethod) == null) {
+      synchronized (GreetingServiceGrpc.class) {
+        if ((getGreetingWithRequestResponseStreamMethod = GreetingServiceGrpc.getGreetingWithRequestResponseStreamMethod) == null) {
+          GreetingServiceGrpc.getGreetingWithRequestResponseStreamMethod = getGreetingWithRequestResponseStreamMethod = 
+              io.grpc.MethodDescriptor.<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest, com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "com.xhhuango.springwithgrpcdemo.GreetingService", "greetingWithRequestResponseStream"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new GreetingServiceMethodDescriptorSupplier("greetingWithRequestResponseStream"))
+                  .build();
+          }
+        }
+     }
+     return getGreetingWithRequestResponseStreamMethod;
   }
 
   /**
@@ -127,9 +191,23 @@ public final class GreetingServiceGrpc {
 
     /**
      */
-    public void greetingWithStream(com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest request,
+    public void greetingWithResponseStream(com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest request,
         io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGreetingWithStreamMethod(), responseObserver);
+      asyncUnimplementedUnaryCall(getGreetingWithResponseStreamMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest> greetingWithRequestStream(
+        io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getGreetingWithRequestStreamMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest> greetingWithRequestResponseStream(
+        io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> responseObserver) {
+      return asyncUnimplementedStreamingCall(getGreetingWithRequestResponseStreamMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -142,12 +220,26 @@ public final class GreetingServiceGrpc {
                 com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>(
                   this, METHODID_GREETING)))
           .addMethod(
-            getGreetingWithStreamMethod(),
+            getGreetingWithResponseStreamMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
                 com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>(
-                  this, METHODID_GREETING_WITH_STREAM)))
+                  this, METHODID_GREETING_WITH_RESPONSE_STREAM)))
+          .addMethod(
+            getGreetingWithRequestStreamMethod(),
+            asyncClientStreamingCall(
+              new MethodHandlers<
+                com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
+                com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>(
+                  this, METHODID_GREETING_WITH_REQUEST_STREAM)))
+          .addMethod(
+            getGreetingWithRequestResponseStreamMethod(),
+            asyncBidiStreamingCall(
+              new MethodHandlers<
+                com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest,
+                com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>(
+                  this, METHODID_GREETING_WITH_REQUEST_RESPONSE_STREAM)))
           .build();
     }
   }
@@ -180,10 +272,26 @@ public final class GreetingServiceGrpc {
 
     /**
      */
-    public void greetingWithStream(com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest request,
+    public void greetingWithResponseStream(com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest request,
         io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getGreetingWithStreamMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGreetingWithResponseStreamMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest> greetingWithRequestStream(
+        io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> responseObserver) {
+      return asyncClientStreamingCall(
+          getChannel().newCall(getGreetingWithRequestStreamMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest> greetingWithRequestResponseStream(
+        io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> responseObserver) {
+      return asyncBidiStreamingCall(
+          getChannel().newCall(getGreetingWithRequestResponseStreamMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -214,10 +322,10 @@ public final class GreetingServiceGrpc {
 
     /**
      */
-    public java.util.Iterator<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> greetingWithStream(
+    public java.util.Iterator<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse> greetingWithResponseStream(
         com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest request) {
       return blockingServerStreamingCall(
-          getChannel(), getGreetingWithStreamMethod(), getCallOptions(), request);
+          getChannel(), getGreetingWithResponseStreamMethod(), getCallOptions(), request);
     }
   }
 
@@ -249,7 +357,9 @@ public final class GreetingServiceGrpc {
   }
 
   private static final int METHODID_GREETING = 0;
-  private static final int METHODID_GREETING_WITH_STREAM = 1;
+  private static final int METHODID_GREETING_WITH_RESPONSE_STREAM = 1;
+  private static final int METHODID_GREETING_WITH_REQUEST_STREAM = 2;
+  private static final int METHODID_GREETING_WITH_REQUEST_RESPONSE_STREAM = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -272,8 +382,8 @@ public final class GreetingServiceGrpc {
           serviceImpl.greeting((com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest) request,
               (io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>) responseObserver);
           break;
-        case METHODID_GREETING_WITH_STREAM:
-          serviceImpl.greetingWithStream((com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest) request,
+        case METHODID_GREETING_WITH_RESPONSE_STREAM:
+          serviceImpl.greetingWithResponseStream((com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest) request,
               (io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>) responseObserver);
           break;
         default:
@@ -286,6 +396,12 @@ public final class GreetingServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_GREETING_WITH_REQUEST_STREAM:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.greetingWithRequestStream(
+              (io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>) responseObserver);
+        case METHODID_GREETING_WITH_REQUEST_RESPONSE_STREAM:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.greetingWithRequestResponseStream(
+              (io.grpc.stub.StreamObserver<com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloResponse>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -338,7 +454,9 @@ public final class GreetingServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new GreetingServiceFileDescriptorSupplier())
               .addMethod(getGreetingMethod())
-              .addMethod(getGreetingWithStreamMethod())
+              .addMethod(getGreetingWithResponseStreamMethod())
+              .addMethod(getGreetingWithRequestStreamMethod())
+              .addMethod(getGreetingWithRequestResponseStreamMethod())
               .build();
         }
       }

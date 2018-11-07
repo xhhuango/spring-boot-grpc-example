@@ -5,7 +5,7 @@ import com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
-public class SpringWithGrpcDemoClient {
+public class Client {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8081")
                 .usePlaintext()

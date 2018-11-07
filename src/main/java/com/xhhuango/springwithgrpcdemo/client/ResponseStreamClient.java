@@ -6,7 +6,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
-public class SpringWithGrpcDemoStreamClient {
+public class ResponseStreamClient {
     public static void main(String[] args) throws InterruptedException {
         new Thread(() -> {
             ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:8081")
@@ -18,7 +18,7 @@ public class SpringWithGrpcDemoStreamClient {
                     .setName("Ray")
                     .build();
 
-            stub.greetingWithStream(request, new StreamObserver<GreetingServiceOuterClass.HelloResponse>() {
+            stub.greetingWithResponseStream(request, new StreamObserver<GreetingServiceOuterClass.HelloResponse>() {
                 @Override
                 public void onNext(GreetingServiceOuterClass.HelloResponse response) {
                     System.out.println(response);

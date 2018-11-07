@@ -27,25 +27,6 @@ public final class GreetingServiceOuterClass {
      */
     com.google.protobuf.ByteString
         getNameBytes();
-
-    /**
-     * <code>repeated string hobbies = 2;</code>
-     */
-    java.util.List<java.lang.String>
-        getHobbiesList();
-    /**
-     * <code>repeated string hobbies = 2;</code>
-     */
-    int getHobbiesCount();
-    /**
-     * <code>repeated string hobbies = 2;</code>
-     */
-    java.lang.String getHobbies(int index);
-    /**
-     * <code>repeated string hobbies = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getHobbiesBytes(int index);
   }
   /**
    * Protobuf type {@code com.xhhuango.springwithgrpcdemo.HelloRequest}
@@ -61,7 +42,6 @@ public final class GreetingServiceOuterClass {
     }
     private HelloRequest() {
       name_ = "";
-      hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -94,15 +74,6 @@ public final class GreetingServiceOuterClass {
               name_ = s;
               break;
             }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                hobbies_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              hobbies_.add(s);
-              break;
-            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -118,9 +89,6 @@ public final class GreetingServiceOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-          hobbies_ = hobbies_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -138,7 +106,6 @@ public final class GreetingServiceOuterClass {
               com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest.class, com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest.Builder.class);
     }
 
-    private int bitField0_;
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
@@ -173,35 +140,6 @@ public final class GreetingServiceOuterClass {
       }
     }
 
-    public static final int HOBBIES_FIELD_NUMBER = 2;
-    private com.google.protobuf.LazyStringList hobbies_;
-    /**
-     * <code>repeated string hobbies = 2;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getHobbiesList() {
-      return hobbies_;
-    }
-    /**
-     * <code>repeated string hobbies = 2;</code>
-     */
-    public int getHobbiesCount() {
-      return hobbies_.size();
-    }
-    /**
-     * <code>repeated string hobbies = 2;</code>
-     */
-    public java.lang.String getHobbies(int index) {
-      return hobbies_.get(index);
-    }
-    /**
-     * <code>repeated string hobbies = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getHobbiesBytes(int index) {
-      return hobbies_.getByteString(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -219,9 +157,6 @@ public final class GreetingServiceOuterClass {
       if (!getNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      for (int i = 0; i < hobbies_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hobbies_.getRaw(i));
-      }
       unknownFields.writeTo(output);
     }
 
@@ -233,14 +168,6 @@ public final class GreetingServiceOuterClass {
       size = 0;
       if (!getNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < hobbies_.size(); i++) {
-          dataSize += computeStringSizeNoTag(hobbies_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getHobbiesList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -260,8 +187,6 @@ public final class GreetingServiceOuterClass {
       boolean result = true;
       result = result && getName()
           .equals(other.getName());
-      result = result && getHobbiesList()
-          .equals(other.getHobbiesList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -275,10 +200,6 @@ public final class GreetingServiceOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      if (getHobbiesCount() > 0) {
-        hash = (37 * hash) + HOBBIES_FIELD_NUMBER;
-        hash = (53 * hash) + getHobbiesList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -414,8 +335,6 @@ public final class GreetingServiceOuterClass {
         super.clear();
         name_ = "";
 
-        hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -442,15 +361,7 @@ public final class GreetingServiceOuterClass {
       @java.lang.Override
       public com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest buildPartial() {
         com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest result = new com.xhhuango.springwithgrpcdemo.GreetingServiceOuterClass.HelloRequest(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.name_ = name_;
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          hobbies_ = hobbies_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.hobbies_ = hobbies_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -503,16 +414,6 @@ public final class GreetingServiceOuterClass {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.hobbies_.isEmpty()) {
-          if (hobbies_.isEmpty()) {
-            hobbies_ = other.hobbies_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureHobbiesIsMutable();
-            hobbies_.addAll(other.hobbies_);
-          }
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -541,7 +442,6 @@ public final class GreetingServiceOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -608,100 +508,6 @@ public final class GreetingServiceOuterClass {
   checkByteStringIsUtf8(value);
         
         name_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureHobbiesIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          hobbies_ = new com.google.protobuf.LazyStringArrayList(hobbies_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getHobbiesList() {
-        return hobbies_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public int getHobbiesCount() {
-        return hobbies_.size();
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public java.lang.String getHobbies(int index) {
-        return hobbies_.get(index);
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getHobbiesBytes(int index) {
-        return hobbies_.getByteString(index);
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder setHobbies(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureHobbiesIsMutable();
-        hobbies_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder addHobbies(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureHobbiesIsMutable();
-        hobbies_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder addAllHobbies(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureHobbiesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, hobbies_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder clearHobbies() {
-        hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string hobbies = 2;</code>
-       */
-      public Builder addHobbiesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureHobbiesIsMutable();
-        hobbies_.add(value);
         onChanged();
         return this;
       }
@@ -1328,15 +1134,22 @@ public final class GreetingServiceOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025GreetingService.proto\022\037com.xhhuango.sp" +
-      "ringwithgrpcdemo\"-\n\014HelloRequest\022\014\n\004name" +
-      "\030\001 \001(\t\022\017\n\007hobbies\030\002 \003(\t\"!\n\rHelloResponse" +
-      "\022\020\n\010greeting\030\001 \001(\t2\363\001\n\017GreetingService\022i" +
-      "\n\010greeting\022-.com.xhhuango.springwithgrpc" +
-      "demo.HelloRequest\032..com.xhhuango.springw" +
-      "ithgrpcdemo.HelloResponse\022u\n\022greetingWit" +
-      "hStream\022-.com.xhhuango.springwithgrpcdem" +
-      "o.HelloRequest\032..com.xhhuango.springwith" +
-      "grpcdemo.HelloResponse0\001b\006proto3"
+      "ringwithgrpcdemo\"\034\n\014HelloRequest\022\014\n\004name" +
+      "\030\001 \001(\t\"!\n\rHelloResponse\022\020\n\010greeting\030\001 \001(" +
+      "\t2\202\004\n\017GreetingService\022i\n\010greeting\022-.com." +
+      "xhhuango.springwithgrpcdemo.HelloRequest" +
+      "\032..com.xhhuango.springwithgrpcdemo.Hello" +
+      "Response\022}\n\032greetingWithResponseStream\022-" +
+      ".com.xhhuango.springwithgrpcdemo.HelloRe" +
+      "quest\032..com.xhhuango.springwithgrpcdemo." +
+      "HelloResponse0\001\022|\n\031greetingWithRequestSt" +
+      "ream\022-.com.xhhuango.springwithgrpcdemo.H" +
+      "elloRequest\032..com.xhhuango.springwithgrp" +
+      "cdemo.HelloResponse(\001\022\206\001\n!greetingWithRe" +
+      "questResponseStream\022-.com.xhhuango.sprin" +
+      "gwithgrpcdemo.HelloRequest\032..com.xhhuang" +
+      "o.springwithgrpcdemo.HelloResponse(\0010\001b\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1355,7 +1168,7 @@ public final class GreetingServiceOuterClass {
     internal_static_com_xhhuango_springwithgrpcdemo_HelloRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_xhhuango_springwithgrpcdemo_HelloRequest_descriptor,
-        new java.lang.String[] { "Name", "Hobbies", });
+        new java.lang.String[] { "Name", });
     internal_static_com_xhhuango_springwithgrpcdemo_HelloResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_xhhuango_springwithgrpcdemo_HelloResponse_fieldAccessorTable = new
